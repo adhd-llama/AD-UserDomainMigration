@@ -1,10 +1,10 @@
-# AD-UserDomainMigration
+# $\color{blue}{\text{AD-UserDomainMigration}}$
 
 A PowerShell script for migrating on-premises Active Directory user attributes from one email domain to another. Designed for organizations transitioning to a new domain suffix (e.g. `.com` → `.gov`) who need to update UPNs, primary SMTP addresses, proxy address aliases, and the `mail` attribute in bulk.
 
 ---
 
-## Features
+## $\color{blue}{\text{Features}}$
 
 - Prompts for all inputs at runtime — no hardcoded values
 - Updates **User Principal Name (UPN)** to new domain
@@ -23,7 +23,7 @@ A PowerShell script for migrating on-premises Active Directory user attributes f
 
 ---
 
-## Requirements
+## $\color{blue}{\text{Requirements}}$
 
 | Requirement | Details |
 |---|---|
@@ -40,7 +40,7 @@ Add-WindowsCapability -Online -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
 
 ---
 
-## Usage
+## $\color{blue}{\text{Usage}}$
 
 1. **Create your input file** — one current UPN per line (see [Input File Format](#input-file-format) below)
 2. **Run the script** in an elevated PowerShell session:
@@ -62,7 +62,9 @@ Enter the full path for the log file        : C:\scripts\migration_log.txt
 
 ---
 
-## Input File Format
+<a id="input-file-format"></a>
+
+## $\color{blue}{\text{Input File Format}}$
 
 The input file should contain one UPN per line using the **current (pre-migration)** domain. Lines starting with `#` are treated as comments and skipped. Blank lines are also skipped.
 
@@ -78,7 +80,7 @@ mwilliams@contoso.com
 
 ---
 
-## What Gets Changed
+## $\color{blue}{\text{What Gets Changed}}$
 
 For each user the script makes the following changes:
 
@@ -95,7 +97,7 @@ For each user the script makes the following changes:
 
 ---
 
-## Log File
+## $\color{blue}{\text{Log File}}$
 
 A timestamped log is written to the path entered at runtime. Each user's block looks like this:
 
@@ -114,7 +116,7 @@ A timestamped log is written to the path entered at runtime. Each user's block l
 
 ---
 
-## Recommendations
+## $\color{blue}{\text{Recommendations}}$
 
 **Test before a full run.** Create a `users_test.txt` with one or two non-production accounts and run the script against those first to verify output in your environment.
 
@@ -124,12 +126,12 @@ A timestamped log is written to the path entered at runtime. Each user's block l
 
 ---
 
-## License
+## $\color{blue}{\text{License}}$
 
 MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-## Contributing
+## $\color{blue}{\text{Contributing}}$
 
 Pull requests are welcome. For major changes please open an issue first to discuss what you'd like to change.
